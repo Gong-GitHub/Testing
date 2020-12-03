@@ -11,5 +11,6 @@ class TestAddMember:
         add_member = self.main.goto_add_member()
         add_member.add_member()
         assert add_member.get_menber('9')
+        print(11)
 
 
