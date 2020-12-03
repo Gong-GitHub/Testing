@@ -1,5 +1,6 @@
 # Gong
 import pytest
+import yaml
 
 from python.calc import Calc
 
@@ -8,7 +9,7 @@ class TestCalc:
     def setup(self):
         self.calc=Calc()
 
-    @pytest.mark.parametrize('a,b,c', [(0, 0, 0), (1, 1, 2), (-1, -1, -2)])
+    @pytest.mark.parametrize('a,b,c',yaml.safe_load(open("../datas/add.yml")))
     def test_add(self, a, b, c):
         result = self.calc.add(a, b)
         assert c == result
